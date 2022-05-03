@@ -1,0 +1,178 @@
+{% extends 'main/ge/components/base.html'%}
+{% load static %}
+{% block body %}
+
+    <div class="mian-contain">
+        <div class="container">
+
+            <!-- CONTAIN START -->
+            <section class="ptb-95 ptb-sm-60 ptb-xs-30">
+                <div class="row">
+                    <div style="background-color: #0e1116; border-radius: 10px;padding-bottom: 10px;"
+                         class="col-md-3 col-sm-4 mb-xs-30">
+                        <div class="sidebar-block">
+                            <div class="sidebar-box listing-box mb-40"><span class="opener plus"></span>
+                                <div style="background-color: #0e1116;" class="sidebar-title">
+                                    <h3>Watch Brands</h3>
+                                </div>
+                                <div class="sidebar-contant">
+                                    <ul>
+                                        {% for manufacturer in manufacturers %}
+                                            <li>
+                                                <a class="{% if manufacturer.slug in request.path %} active {% endif %}"
+                                                   href="{% url 'catalog-filter-brand_ge' manufacturer.slug %}">{{ manufacturer.title }}</a>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="border-radius: 10px;padding-bottom: 10px;" class="sidebar-box gray-box mb-20">
+                                <span class="opener plus"></span>
+                                <div class="sidebar-title">
+                                    <h3>Shop by</h3>
+                                </div>
+                                <div class="sidebar-contant">
+                                    <div class="mb-20">
+                                        <div class="inner-title">Category</div>
+                                        <ul>
+                                            {% for category in categories %}
+                                                <li><a class="{% if category.id|slugify == request.path|slice:'-1:' %} active {% endif %}" href="{% url 'catalog-category_ge' category.id %}">{{ category.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="mb-20">
+                                        <div class="inner-title">Discount</div>
+                                        <ul>
+                                            <li><a class="{% if 'discount' in request.path %} active {% endif %}" href="{% url 'catalog-discount_ge' %}">Yes</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="price-range mb-30">
+                                        <div class="inner-title">Price range</div>
+                                        <form id="priceForm" action="{% url 'catalog-price_ge' %}"><input name="range" class="price-txt" type="text" id="amount"></form>
+                                        <div id="slider-range"></div>
+                                        <a onclick="document.getElementById('priceForm').submit()" class="btn btn-color mt-20" style="background-color: #1f2329;border-radius: 5px;">Filter price</a>
+                                    </div>
+                                    <div class="mb-20">
+                                        <div class="inner-title">Condition</div>
+                                        <ul>
+                                            <li><a class="{% if "new" in request.path %} active {% endif %}" href="{% url 'catalog_condition_ge' "new" %}">New</a></li>
+                                            <li><a class="{% if "used" in request.path %} active {% endif %}" href="{% url 'catalog_condition_ge' "used" %}">Used</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mb-20">
+                                        <div class="inner-title">Type</div>
+                                        <ul>
+                                            {% for type in types %}
+                                            <li>
+                                                <a class="{% if type.slug in request.path %} active {% endif %}" href="{% url 'catalog-type_ge' type.slug %}">{{ type.title }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="mb-20">
+                                        <div class="inner-title">Speciall Offers</div>
+                                        <ul>
+                                            {% for special_offer in special_offers %}
+                                            <li>
+                                                <a class="{% if special_offer.slug in request.path %} active {% endif %}" href="{% url 'special-offers_ge' special_offer.slug %}">{{ special_offer.title}}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="mb-20">
+                                      <div class="inner-title">Color</div>
+                                      <ul>
+                                        <li><a>Black <span>(0)</span></a></li>
+                                        <li><a>Blue <span>(05)</span></a></li>
+                                        <li><a>Brown <span>(10)</span></a></li>
+                                      </ul>
+                                    </div> -->
+{#                                    <a class="btn btn-color">Refine</a>#}
+                                </div>
+                            </div>
+                            <!-- class="col-md-3 col-sm-4 col-xs-6 mb-30 best-pro-col" -->
+                            <!-- <div class="sidebar-box mb-40 visible-sm visible-md visible-lg"> <a> <img src="images/left-banner.jpg" alt="Gecko"> </a> </div> -->
+
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-8">
+                        <h2 style="text-align: center;font-size: 35px;background-color: #0e1116;padding: 10px;border-radius: 10px;">
+                            {% if brand %}
+                                {{ brand }}
+                            {% elif discount %}
+                                Discounted products
+                            {% elif category %}
+                                {{ category }}
+                            {% elif condition %}
+                                {{ condition }}
+                            {% elif type %}
+                                {{ type }}
+                            {% elif special_offer %}
+                                {{ special_offer }}
+                            {% elif price_range %}
+                                {{ price_range }}
+                            {% endif %}
+                        </h2>
+                        <hr class="mb-20"/>
+
+                        <div class="product-listing">
+                            <div class="row">
+                                {% for product in page %}
+                                    <div class="col-md-3 col-sm-4 col-xs-6">
+                                        <div class="product-item">
+                                            {% if product.is_sale %}
+                                                <div class="sale-label"><span>Sale</span></div>
+                                            {% endif %}
+                                            <div class="product-image">
+                                                <a href="{% url 'product-details_ge' product.slug %}"> <img
+                                                        src="{{ product.image.url }}" alt="{{ product.title }}"> </a>
+                                            </div>
+                                            <div style="padding-top: 14px;height: 150px;" class="product-item-details">
+                                                <div class="product-item-name"><a
+                                                        href="product-page.html">{{ product.brand }}</a></div>
+                                                <div class="product-item-name"><a
+                                                        href="{% url 'product-details_ge' product.slug %}">{{ product.title }}</a>
+                                                </div>
+                                                <div style="position: absolute;bottom: 10px;left: 0; right:0; margin-left:auto; margin-right:auto;" class="price-box"><span class="price">${{ product.price }}</span>
+                                                    <del class="price old-price">{{ product.old_price|default_if_none:"" }}</del>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                              <div class="row">
+                                <div class="col-xs-12">
+                                  <div class="pagination-bar">
+                                    <ul>
+                                        {% if page.has_previous %}
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
+                                        {% endif %}
+
+                                        {% if page.has_previous %}
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.previous_page_number }}">{{ page.previous_page_number }}</a></li>
+                                        {% endif %}
+
+                                        {% if page.number %}
+                                            <li class="active" ><a href="#">{{ page.number }}</a></li>
+                                        {% endif %}
+
+                                        {% if page.has_next %}
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.next_page_number }}">{{ page.next_page_number }}</a></li>
+                                        {% endif %}
+
+                                        {% if page.has_next %}
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                                        {% endif %}
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- CONTAINER END -->
+        </div>
+    </div>
+{% endblock %}

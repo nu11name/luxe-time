@@ -1,0 +1,250 @@
+{% extends 'main/ru/components/base.html'%}
+{% load static %}
+
+{% block body %}
+
+   <!-- HEADER END -->
+   <!-- BANNER STRAT -->
+   <div class="banner">
+      <div class="main-banner">
+         <div class="item">
+            <img src="{% static 'images/banner11.jpg'%}" alt="Luxe Time">
+            <div class="banner-detail">
+               <div class="row">
+                  <div class="col-xs-12">
+                     <div class="heading-part align-center">
+                        <div id="tabs" class="category-bar">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <!-- <div class="banner-detail-inner"> <span class="slogan">THE DESIRED COLLECTION</span>
+                     <h1 class="banner-title">Luxe Time Luxury Watches</h1>
+
+                     <span class="sub-title">Lorem ipsum dolor sit amet. It has ipsum survived not only irosum .</span><br>
+
+                     <a href="{% url 'catalog'  %}" class="btn btn-color big-width">Shop Now</a>
+
+                     </div> -->
+               </div>
+            </div>
+            <div class="banner-detail">
+               <div class="container">
+                  <div class="banner-imgg">
+                     <!-- <img style="width:100px" src="./images/logo.svg" alt=""> -->
+                  </div>
+                  <div class="banner-detail-inner">
+                     <span class="slogan">THE DESIRED COLLECTION</span>
+                     <h1 class="banner-title">Luxe Time Luxury Watches</h1>
+                     <span class="sub-title">Lorem ipsum dolor sit amet. It has ipsum survived not only irosum .</span><br>
+                     <a href="{% url 'catalog_ru'  %}" class="btn btn-color big-width">Shop Now</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- <div class="texture-bottom"></div> -->
+   </div>
+   <!-- BANNER END -->
+   <div class="mian-contain">
+      <div class="">
+         <!--  Sub-banner Block Start  -->
+         <section class="mt-40">
+            <div class="container">
+               <div class="sub-banner-block center-xs">
+                  <div class="row mlr_-20">
+                     <div class="col-sm-4 plr-20">
+                        <div class="sub-banner sub-banner1">
+                           <a href="catalog/special-offers/limited-offer/ru"> <img src="{% static 'images/sub-banner1.jpg' %}" alt="Luxe Time"></a>
+                           <div class="sub-banner-detail">
+                              <div class="sub-banner-type">limited offer</div>
+                              <a href="catalog/special-offers/limited-offer/ru" class="btn btn-color small">buy now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4 plr-20">
+                        <div class="sub-banner sub-banner2">
+                           <a href="{% url 'catalog-discount_ru'  %}"> <img src="{% static 'images/sub-banner2.jpg' %}" alt="Luxe Time"></a>
+                           <div class="sub-banner-detail">
+                              <div class="sub-banner-type">Buy now with discount</div>
+                              <!-- <button></button> -->
+                              <a href="{% url 'catalog_ru'  %}" class="btn btn-color small">sale now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4 plr-20">
+                        <div class="sub-banner sub-banner3">
+                           <a href="catalog/special-offers/special-edition/ru"> <img src="{% static 'images/sub-banner3.jpg' %}" alt="Luxe Time"></a>
+                           <div class="sub-banner-detail">
+                              <div class="sub-banner-type">Special edition</div>
+                              <!-- <button></button> -->
+                              <a href="catalog/special-offers/special-edition/ru" class="btn btn-color small">hot style</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--  Sub-banner Block Start  -->
+         <!--  Our Products Block Start  -->
+         <section class="ptb-95 ptb-sm-60 ptb-xs-30">
+            <div class="container">
+               <div class="product-slider">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <div class="heading-part align-center">
+                           <h2 class="main_title">Our Products</h2>
+                           <!-- <div id="tabs" class="category-bar mb-20">
+                              <ul class="tab-stap">
+
+                                <li><a class="tab-step1 selected" title="step1">Best seller</a></li>
+
+                                <li>-</li>
+
+                                <li><a class="tab-step2" title="step2">New Products</a></li>
+
+                                <li>-</li>
+
+                                <li><a class="tab-step3" title="step3">Special Products</a></li>
+
+                              </ul>
+
+                              </div> -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div>
+                        <div class="items">
+                           <div class="tab_content pro_cat">
+                              <ul>
+                                 <li>
+                                    <div id="data-step1" class="items-step1 selected product-slider-main position-r" data-temp="tabdata">
+
+                                       {% for product in products %}
+                                          <div class="col-md-3 col-sm-4 col-xs-6 mb-30 best-pro-col">
+                                             <div  class="product-item">
+                                                {% if product.is_sale %}
+                                                   <div class="sale-label"><span>Sale</span></div>
+                                                {% endif %}
+                                                <div class="product-image">
+                                                   <a href="{% url 'product-details_ru' product.slug %}"> <img src="{{ product.image.url }}" alt="{{ product.title }}"> </a>
+<!--                                                    <div class="product-detail-inner">-->
+<!--                                                        <div class="detail-inner-left">-->
+<!--                                                           <div style="display: flex;justify-content: space-between;">-->
+<!--                                                              <svg style="width:30px;" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" class="corner corner_top corner_left"><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#15191f80" points="0,0 10.4,0 85,0 85,10.4 10.4,10.4 10.4,85 0,85 0,10.4"></polygon></svg>-->
+<!--                                                              <svg style="width:30px;transform: scaleX(-1);" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" class="corner corner_top corner_left"><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#15191f80" points="0,0 10.4,0 85,0 85,10.4 10.4,10.4 10.4,85 0,85 0,10.4"></polygon></svg>-->
+<!--                                                           </div>-->
+<!--                                                        </div>-->
+<!--                                                        <div style="position: absolute;bottom: 0px;width: 100%;" >-->
+<!--                                                           <div  class="mb-20" style="display: flex;justify-content: space-between;transform: scaleY(-1);">-->
+<!--                                                              <svg style="width:30px;color:red;" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" class="corner corner_top corner_left"><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#15191f80" points="0,0 10.4,0 85,0 85,10.4 10.4,10.4 10.4,85 0,85 0,10.4"></polygon></svg>-->
+<!--                                                              <svg style="width:30px;transform: scaleX(-1);" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85" class="corner corner_top corner_left"><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#15191f80" points="0,0 10.4,0 85,0 85,10.4 10.4,10.4 10.4,85 0,85 0,10.4"></polygon></svg>-->
+<!--                                                           </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+                                                </div>
+                                                <div style="padding-top: 14px;height: 150px;" class="product-item-details">
+                                                   <div class="product-item-name"> <a style="color:white;font-size:20px;" href="{% url 'product-details_ru' product.slug %}">{{ product.brand }}</a> </div>
+                                                   <div style="margin-bottom: 10px;" class="product-item-name"> <a href="{% url 'product-details_ru' product.slug %}">{{ product.title }}</a> </div>
+                                                   <div style="position: absolute;bottom: 10px;left: 0; right:0; margin-left:auto; margin-right:auto;" class="price-box"> <span class="price">${{ product.price }}</span> <del class="price old-price">{{ product.old_price|default_if_none:"" }}</del> </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       {% endfor %}
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!--  Our Products Block End  -->
+         <!--  Shop Block Start  -->
+         <section class="shopbybg ptb-95 ptb-sm-60 ptb-xs-30">
+
+        <div class="container">
+
+          <div class="row">
+
+              <div class="col-xs-12">
+
+                <div class="heading-part align-center">
+
+                  <h2 class="main_title">Our Services</h2>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          <div class="row">
+
+            <div style="color: black;" class="col-lg-7 col-md-7">
+
+                <p class="center-sm"> <b>Expertise. </b> Our highly qualified experts with more than 8-years of experience in this field value the authentity of each item as well as its visual appearance and present technical state. We use special professional equipment Watch Expert to check watch escapement. </p>
+                <p class="center-sm"> <b>Valuation. </b> To determine a loan value we use different criteria such as its technical state, brand and model, condition, “provenance” (the original box, a bill of sale, etc.). If you would like to get an estimate online, please, fill in the form below and attach the photo of your watch. We will contact you immediately. </p>
+                <p class="center-sm"> <b>Paying Cash. </b> As soon as you have signed a loan contract in our office, we will pay you cash. There are special terms for huge sum of cash. We use special equipment to carry out banknote identification. On clients’ demand we can also transfer money using bank services. “The Perspective” pawn shop also offers collection and support services. </p>
+                <p class="center-sm"> <b>Insurance. </b> We offer you 100% watch insurance. If needed, we enclose a copy of a loan contract with a pawn ticket. Our insurance covers the loss and all kinds of watch damage. Our insurance partner is a well-established Ingosstrakh Insurance Company.</p>
+
+            </div>
+
+            <div class="col-lg-5 col-md-5 center-sm mt-sm-30 hidden-sm hidden-xs"><img style="display: block;margin: auto;height: 350px;" src="{% static 'images/services-main.png' %}" alt="Lux Time">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+         <!--  Shop Block End  -->
+         <!-- Latest News block Start  -->
+         <section class="blog-main ptb-95 ptb-sm-60 ptb-xs-30">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-12">
+                     <div class="heading-part align-center mb-30">
+                        <h2 class="main_title">Contact Us</h2>
+                     </div>
+                  </div>
+               </div>
+               <section class="align-center">
+                  <div class="contact-info">
+                     <div class="row m-0">
+                        <div class="col-sm-4 p-0">
+                           <div class="contact-box">
+                              <div class="contact-icon contact-phone-icon"></div>
+                              <span><b>Tel</b></span>
+                              <p>0123 456 789 / 0123 456 788</p>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 p-0">
+                           <div class="contact-box">
+                              <div class="contact-icon contact-mail-icon"></div>
+                              <span><b>Mail</b></span>
+                              <p>infoservices@Gecko.com </p>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 p-0">
+                           <div class="contact-box">
+                              <div class="contact-icon contact-open-icon"></div>
+                              <span><b>Open</b></span>
+                              <p>Mon – Sat: 9:00 – 18:00</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </section>
+      </div>
+   </div>
+</div>
+{% endblock %}

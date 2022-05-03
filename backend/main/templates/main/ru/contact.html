@@ -1,0 +1,54 @@
+{% extends 'main/ru/components/base.html'%}
+{% load static %}
+
+{% block body %}
+  <div style="background-color: #0e1116;" class="mian-contain">
+    <div class="container">
+
+      <!-- CONTAIN START ptb-95-->
+      <!-- <div class="mapouter"><div class="gmap_canvas"><style><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=tbilisi&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org">pirate bay</a><br><style>.mapouter{position:relative;text-align:right;height:auto ;width:100%;}</style><a href="https://www.embedgooglemap.net">google maps widget html</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div> {width:100%;height:100%;}</style> -->
+      <section style="background-color: #0e1116;" class="ptb-95 ptb-sm-60 ptb-xs-30">
+        <div style="height:600px" class="row">
+          <div class="col-xs-8">
+            <iframe width="100%" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=tbilisi&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          </div>
+          <div style="margin-top: 5pc;" class="col-xs-4">
+            <section class="align-center">
+              <div class="contact-info">
+                <div class="row m-0">
+                  <div class="row-sm-4 mb-40 p-0">
+                    <div class="contact-box">
+                      <div class="contact-icon contact-phone-icon"></div>
+                      <span><b>Tel</b></span>
+                      <p>0123 456 789 / 0123 456 788</p>
+                    </div>
+                  </div>
+                  <div class="row-sm-4 mb-40 p-0">
+                    <div class="contact-box">
+                      <div class="contact-icon contact-mail-icon"></div>
+                      <span><b>Mail</b></span>
+                      <p>infoservices@Gecko.com </p>
+                    </div>
+                  </div>
+                  <div class="row-sm-4 p-0">
+                    <div class="contact-box">
+                      <div class="contact-icon contact-open-icon"></div>
+                      <span><b>Open</b></span>
+                      <p>Mon – Sat: 9:00 – 18:00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTAINER END -->
+    </div>
+  </div>
+  <hr style="height: 1px; background-color: #9d705b; border: none;">
+
+</div>
+
+{% endblock %}

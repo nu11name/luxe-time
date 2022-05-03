@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LuxTime</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="distribution" content="global">
+    <meta name="revisit-after" content="2 Days">
+    <meta name="robots" content="ALL">
+    <meta name="rating" content="8 YEARS">
+    <meta name="Language" content="en-us">
+    <meta name="GOOGLEBOT" content="NOARCHIVE">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="//db.onlinewebfonts.com/c/fdcb4e99330f56ecee5486a1233bd0cc?family=Core+Sans+A+45+Regular"
+          rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/3ad858f18d2ee7bf6afc4155b15ffb6f?family=PT+Serif" rel="stylesheet"
+          type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fotorama.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.html' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.html' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.html' %}">
+
+</head>
+
+<body class="homepage">
+<div class="se-pre-con"></div>
+<div class="main">
+    <!-- HEADER START -->
+
+
+    <header class="navbar navbar-custom" id="header">
+
+        <div style="background-color: #15191f;" class="header-top">
+
+            <div class="container">
+
+                <div class="header-inner">
+
+                    <div style="background-color: #15191f;" class="row">
+
+                        <div style="background-color: #15191f;" class="col-md-4">
+
+                            <div class="top-link top-link-left visible-lg visible-md">
+
+                            </div>
+
+                        </div>
+
+                        <div style="margin: 0 auto; background-color: #15191f; " class="col-md-4 col-sm-6 col-xs-6">
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="right-side float-none-sm position-r">
+
+                                <div class="right-side1"><a class="navbar-brand page-scroll" href="{% url 'index_ru' %}"> <img
+                                        style="height: 60px;padding: 0px;margin-top: -5px;" class="logo-responsive"
+                                        alt="Onlineshop" src="{% static 'images/logo-main1.svg' %}"> </a></div>
+                                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle"
+                                        type="button"><i class="fa fa-bars"></i></button>
+
+                                <div class="right-side float-left-xs header-right-link">
+
+                                    <ul>
+                                        <li style="opacity: 0;">
+                                            <hr>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="header-bottom">
+
+            <div class="container">
+
+                <div id="menu" class="navbar-collapse collapse align-center">
+
+
+                    <div class="row">
+
+                        <div class="col-lg-2 col-md-2">
+                            <div class="navbar-header align-center float-left-sm"><a class="navbar-brand page-scroll"
+                                                                                     href="{% url 'index_ru' %}"> <img
+                                    style="height: 60px;padding: 0px;margin-top: -5px;" class="logo-responsive"
+                                    alt="Onlineshop" src="{% static 'images/logo-main1.svg' %}"> </a></div>
+                        </div>
+
+                        <div class="col-lg-8 col-md-8">
+
+                            <ul class="nav navbar-nav navbar-left">
+
+                                <li style="text-align: center;" class="level"><a href="{% url 'index_ru' %}">Main</a></li>
+                                <li style="text-align: center;" class="level"><a href="{% url 'catalog_ru' %}">Catalog</a>
+                                </li>
+                                <li style="text-align: center;" class="level"><a href="{% url 'about_ru' %}">About Us</a>
+                                </li>
+                                <li style="text-align: center;" class="level"><a
+                                        href="{% url 'services_ru' %}">Services</a></li>
+                                <li style="text-align: center;" class="level"><a href="{% url 'contact_ru' %}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li style="text-align: center;" class="level"><a href="{% url 'index' %}">En</a></li>
+                                <li style="text-align: center;" class="level"><a href="{% url 'index_ge' %}">Ge</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+    <hr style="height: 1px; background-color: #9d705b; border: none;">
+
+    {% block body %} {% endblock %}
+
+    <script src="{% static 'js/jquery-1.12.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/fotorama.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
