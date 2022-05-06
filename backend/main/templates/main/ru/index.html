@@ -146,7 +146,7 @@
 <!--                                                        </div>-->
 <!--                                                    </div>-->
                                                 </div>
-                                                <div style="padding-top: 14px;height: 150px;" class="product-item-details">
+                                                <div style="padding-top: 14px;height: 180px;" class="product-item-details">
                                                    <div class="product-item-name"> <a style="color:white;font-size:20px;" href="{% url 'product-details_ru' product.slug %}">{{ product.brand }}</a> </div>
                                                    <div style="margin-bottom: 10px;" class="product-item-name"> <a href="{% url 'product-details_ru' product.slug %}">{{ product.title }}</a> </div>
                                                    <div style="position: absolute;bottom: 10px;left: 0; right:0; margin-left:auto; margin-right:auto;" class="price-box"> <span class="price">${{ product.price }}</span> <del class="price old-price">{{ product.old_price|default_if_none:"" }}</del> </div>

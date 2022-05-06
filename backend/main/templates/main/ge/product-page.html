@@ -10,18 +10,18 @@
         <!-- CONTAIN START pt-95-->
         <section class="pt-sm-60 pt-xs-30 mt-40">
             <div class="row">
-                <div class="col-md-6 col-sm-6 mb-xs-30">
+                <div class="col-md-5 col-sm-5 mb-xs-30">
                     <div class="fotorama" data-nav="thumbs" data-allowfullscreen="native">
                         {% for image in product.product_images.all %}
                             <a href="#"><img src='{{ image.image.url }}' alt="Gecko"></a>
                         {% endfor %}
                     </div>
                     {% if product.Description_ge %}
-                        <p class="mt-40" style="font-size:20px">სპეციფიკაციები</p>
-                        <p style="padding-bottom: 50px;">{{ product.Description_ge  }} </p>
+                        <p class="mt-40" style="font-size:20px;color: white;">სპეციფიკაციები</p>
+                        <p style="font-size:15px;color: white; padding-bottom: 50px;">{{ product.Description_ge  }} </p>
                     {% endif %}
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-7 col-sm-7">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="product-detail-main">
@@ -44,35 +44,35 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 mb-20">
                                                                 <div class="heading-part">
-                                                                    <h2 style="text-align: center;font-size: 30px;" class="sub-heading">контакты</h2>
+                                                                    <h2 style="text-align: center;font-size: 30px;" class="sub-heading">საკონტაქტო ინფორმაცია</h2>
                                                                 </div>
                                                             </div>
                                                             <hr>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
-                                                                    <input style="color: #15191f;" type="text" required placeholder="Полное имя" name="name">
+                                                                    <input style="color: #15191f;" type="text" required placeholder="სახელი და გვარი" name="name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
                                                                     <input style="color: #15191f;" type="email" required
-                                                                           placeholder="Эл. адрес" name="email">
+                                                                           placeholder="ელ-ფოსტა" name="email">
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
                                                                     <input style="color: #15191f;" type="number" required
-                                                                           placeholder="номер телефона" name="number">
+                                                                           placeholder="მობილურის ნომერი" name="number">
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
-                                                                    <input style="color: #15191f;" type="text" required placeholder="Адрес" name="address">
+                                                                    <input style="color: #15191f;" type="text" required placeholder="მისამართი" name="address">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <input style="color: black;" type="submit" value="Отправить"/>
+                                                    <input style="color: black;" type="submit" value="გაგზავნა"/>
 
                                                 </form>
                                             </div>
@@ -81,7 +81,7 @@
                                     </div>
 
 
-                                    <div class="product-info-stock-sku">
+                                    <div style="color: white;font-size: 18px;" class="product-info-stock-sku">
                                         <div>
                                             <label>ხელმისაწვდომობა: </label>
                                             {% if product.sold_out %}
@@ -99,7 +99,7 @@
                                             {% endif %}
                                         </div>
                                     </div>
-                                    <div style="padding-left: 15px;" class="row">
+                                    <div style="padding-left: 15px;color: white;font-size: 17px;" class="row">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="row">
                                                 {% for desc in product.product_desc.all %}

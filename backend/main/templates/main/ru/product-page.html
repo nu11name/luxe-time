@@ -10,18 +10,18 @@
         <!-- CONTAIN START pt-95-->
         <section class="pt-sm-60 pt-xs-30 mt-40">
             <div class="row">
-                <div class="col-md-6 col-sm-6 mb-xs-30">
+                <div class="col-md-5 col-sm-5 mb-xs-30">
                     <div class="fotorama" data-nav="thumbs" data-allowfullscreen="native">
                         {% for image in product.product_images.all %}
                             <a href="#"><img src='{{ image.image.url }}' alt="Gecko"></a>
                         {% endfor %}
                     </div>
                     {% if product.Description_ru %}
-                        <p class="mt-40" style="font-size:20px">ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ</p>
-                        <p style="padding-bottom: 50px;">{{ product.Description_ru  }} </p>
+                        <p class="mt-40" style="font-size:20px;color: white;">ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ</p>
+                        <p style="font-size:15px;color: white; padding-bottom: 50px;" >{{ product.Description_ru  }} </p>
                     {% endif %}
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-7 col-sm-7">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="product-detail-main">
@@ -33,7 +33,7 @@
                                         <del class="price old-price">{{ product.old_price|default_if_none:"" }}</del>
                                     </div>
                                     <a style="margin: 40px 0px 40px 0px;" onclick="BuyNow()"
-                                       class="btn btn-color big-width">Купи сейчас</a>
+                                       class="btn btn-color big-width">купить</a>
                                     <div style="display: none;" id="Show-More">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -44,35 +44,35 @@
                                                         <div class="row">
                                                             <div class="col-xs-12 mb-20">
                                                                 <div class="heading-part">
-                                                                    <h2 style="text-align: center;font-size: 30px;" class="sub-heading">Shipping Address</h2>
+                                                                    <h2 style="text-align: center;font-size: 30px;" class="sub-heading">контакты</h2>
                                                                 </div>
                                                             </div>
                                                             <hr>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
-                                                                    <input style="color: #15191f;" type="text" required placeholder="Full Name" name="name">
+                                                                    <input style="color: #15191f;" type="text" required placeholder="Полное имя" name="name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
                                                                     <input style="color: #15191f;" type="email" required
-                                                                           placeholder="Email Address" name="email">
+                                                                           placeholder="Эл. адрес" name="email">
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
                                                                     <input style="color: #15191f;" type="number" required
-                                                                           placeholder="Phone Number" name="number">
+                                                                           placeholder="номер телефона" name="number">
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-12 mb-20">
                                                                 <div class="input-box">
-                                                                    <input style="color: #15191f;" type="text" required placeholder="Address" name="address">
+                                                                    <input style="color: #15191f;" type="text" required placeholder="Адрес" name="address">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <input style="color: black;" type="submit" />
+                                                    <input style="color: black;" type="submit" value="Отправить"/>
 
                                                 </form>
                                             </div>
@@ -81,7 +81,7 @@
                                     </div>
 
 
-                                    <div class="product-info-stock-sku">
+                                    <div style="color: white;font-size: 18px;"" class="product-info-stock-sku">
                                         <div>
                                             <label>Доступность: </label>
                                             {% if product.sold_out %}
@@ -99,7 +99,7 @@
                                             {% endif %}
                                         </div>
                                     </div>
-                                    <div style="padding-left: 15px;" class="row">
+                                    <div style="padding-left: 15px;color: white;font-size: 17px;" class="row">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="row">
                                                 {% for desc in product.product_desc.all %}

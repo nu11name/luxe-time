@@ -10,18 +10,18 @@
         <!-- CONTAIN START pt-95-->
         <section class="pt-sm-60 pt-xs-30 mt-40">
             <div class="row">
-                <div class="col-md-6 col-sm-6 mb-xs-30">
+                <div class="col-md-5 col-sm-5 mb-xs-30">
                     <div class="fotorama" data-nav="thumbs" data-allowfullscreen="native">
                         {% for image in product.product_images.all %}
                             <a href="#"><img src='{{ image.image.url }}' alt="Gecko"></a>
                         {% endfor %}
                     </div>
                     {% if product.Description %}
-                        <p class="mt-40" style="font-size:20px">SPECIFICATIONS</p>
-                        <p style="padding-bottom: 50px;">{{ product.Description  }} </p>
+                        <p style="font-size:20px;color: white;" class="mt-40">SPECIFICATIONS</p>
+                        <p style="font-size:15px;color: white; padding-bottom: 50px;">{{ product.Description  }} </p>
                     {% endif %}
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-7 col-sm-7">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="product-detail-main">
@@ -81,7 +81,7 @@
                                     </div>
 
 
-                                    <div class="product-info-stock-sku">
+                                    <div style="color: white;font-size: 18px;" class="product-info-stock-sku">
                                         <div>
                                             <label>Availability: </label>
                                             {% if product.sold_out %}
@@ -90,7 +90,7 @@
                                                 <span class="info-deta">In stock</span>
                                             {% endif %}
                                         </div>
-                                        <div>
+                                        <div style="color: white;">
                                             <label>CONDITION: </label>
                                             {% if product.condition == "New" %}
                                                 <span class="info-deta">Used</span>
@@ -99,7 +99,7 @@
                                             {% endif %}
                                         </div>
                                     </div>
-                                    <div style="padding-left: 15px;" class="row">
+                                    <div style="padding-left: 15px;color: white;font-size: 17px;" class="row">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="row">
                                                 {% for desc in product.product_desc.all %}
@@ -108,7 +108,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <div class="row">
+                                            <div  class="row">
                                                 {% for desc in product.product_desc.all %}
                                                     <p>{{ desc.desc_en|default_if_none:"" }}</p>
                                                 {% endfor %}

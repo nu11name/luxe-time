@@ -7,7 +7,7 @@
 
 
 body{
-	font-family: 'CoreSansG45Regular'!important;
+	font-family: 'Roboto', sans-serif; !important;
 }
 
 
@@ -876,7 +876,7 @@ html {
 }
 
 h1 a {
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 [class~=search-box] input[class~=input-text] {
@@ -6941,7 +6941,7 @@ h1 {
 }
 
 [class~=product-item-details] [class~=price-box] [class~=price] {
-	font-family: 'CoreSansG45Regular'!important;
+	font-family: 'Roboto', sans-serif; important;
 	margin-right: .052083333in;
 	color: #c29471;
 	font-size: 23px;
@@ -9541,7 +9541,7 @@ select {
 }
 
 [class~=product-detail-main] [class~=price-box] [class~=price] {
-	font-size: 22px;
+	font-size: 32px;
 }
 
 .contact-info .p-0:last-child {
@@ -11990,7 +11990,7 @@ span{
 
 body{
 	background-color: #15191f;
-	font-family: 'CoreSansG45Regular'!important;
+	font-family: 'Roboto', sans-serif; !important;
 }
 
 
