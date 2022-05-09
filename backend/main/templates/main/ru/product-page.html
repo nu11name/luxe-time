@@ -1,5 +1,6 @@
 {% extends 'main/ru/components/base.html'%}
 {% load static %}
+{% load humanize %}
 
 {% block body %}
 <!-- BANNER END -->
@@ -29,8 +30,8 @@
                                     <h1 style="color: #ffffff;font-size: 35px;padding: 40px 0px 40px 0px;"
                                         class="product-item-name">{{ product.title }}</h1>
                                     <hr style="padding: 0px 0px 40px 0px;">
-                                    <div class="price-box"><span class="price">${{ product.price }}</span>
-                                        <del class="price old-price">{{ product.old_price|default_if_none:"" }}</del>
+                                    <div class="price-box"><span class="price">${{ product.price|intcomma|slice:":-3" }}</span>
+                                        <del class="price old-price">{{ product.old_price|default_if_none:""|intcomma|slice:":-3" }}</del>
                                     </div>
                                     <a style="margin: 40px 0px 40px 0px;" onclick="BuyNow()"
                                        class="btn btn-color big-width">купить</a>
@@ -104,6 +105,8 @@
                                             <div class="row">
                                                 {% for desc in product.product_desc.all %}
                                                     <p>{{ desc.title_ru|default_if_none:"" }}</p>
+                                                    <hr style="padding: 10px 0px 0px 0px;">
+
                                                 {% endfor %}
                                             </div>
                                         </div>
@@ -111,6 +114,8 @@
                                             <div class="row">
                                                 {% for desc in product.product_desc.all %}
                                                     <p>{{ desc.desc_ru|default_if_none:"" }}</p>
+                                                    <hr style="padding: 10px 0px 0px 0px;">
+
                                                 {% endfor %}
                                             </div>
                                         </div>

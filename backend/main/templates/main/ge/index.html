@@ -1,5 +1,6 @@
 {% extends 'main/ge/components/base.html'%}
 {% load static %}
+{% load humanize %}
 
 {% block body %}
 
@@ -35,10 +36,10 @@
                      <!-- <img style="width:100px" src="./images/logo.svg" alt=""> -->
                   </div>
                   <div class="banner-detail-inner">
-                     <span class="slogan">THE DESIRED COLLECTION</span>
-                     <h1 class="banner-title">Luxe Time Luxury Watches</h1>
-                     <span class="sub-title">Lorem ipsum dolor sit amet. It has ipsum survived not only irosum .</span><br>
-                     <a href="{% url 'catalog_ge'  %}" class="btn btn-color big-width">Shop Now</a>
+                     <span class="slogan">მოთხხოვნადი კოლექცია</span>
+                     <h1 class="banner-title">LuxTime ფეშენებელური საათები</h1>
+<!--                     <span class="sub-title">Lorem ipsum dolor sit amet. It has ipsum survived not only irosum .</span><br>-->
+                     <a href="{% url 'catalog_ge'  %}" class="btn btn-color big-width">კატალოგი</a>
                   </div>
                </div>
             </div>
@@ -95,7 +96,7 @@
                   <div class="row">
                      <div class="col-xs-12">
                         <div class="heading-part align-center">
-                           <h2 class="main_title">Our Products</h2>
+                           <h2 class="main_title">ჩვენი პროდუქტები</h2>
                            <!-- <div id="tabs" class="category-bar mb-20">
                               <ul class="tab-stap">
 
@@ -149,7 +150,7 @@
                                                 <div style="padding-top: 14px;height: 180px;" class="product-item-details">
                                                    <div class="product-item-name"> <a style="color:white;font-size:20px;" href="{% url 'product-details_ge' product.slug %}">{{ product.brand }}</a> </div>
                                                    <div style="margin-bottom: 10px;" class="product-item-name"> <a href="{% url 'product-details_ge' product.slug %}">{{ product.title }}</a> </div>
-                                                   <div style="position: absolute;bottom: 10px;left: 0; right:0; margin-left:auto; margin-right:auto;" class="price-box"> <span class="price">${{ product.price }}</span> <del class="price old-price">{{ product.old_price|default_if_none:"" }}</del> </div>
+                                                   <div style="position: absolute;bottom: 10px;left: 0; right:0; margin-left:auto; margin-right:auto;" class="price-box"> <span class="price">${{ product.price|intcomma|slice:":-3" }}</span> <del class="price old-price">{{ product.old_price|default_if_none:""|intcomma|slice:":-3" }}</del> </div>
                                                 </div>
                                              </div>
                                           </div>
@@ -176,7 +177,7 @@
 
                 <div class="heading-part align-center">
 
-                  <h2 class="main_title">Our Services</h2>
+                  <h2 class="main_title">სერვისი</h2>
 
                 </div>
 
@@ -211,7 +212,7 @@
                <div class="row">
                   <div class="col-xs-12">
                      <div class="heading-part align-center mb-30">
-                        <h2 class="main_title">Contact Us</h2>
+                        <h2 class="main_title">კონტაქტი</h2>
                      </div>
                   </div>
                </div>
@@ -221,22 +222,22 @@
                         <div class="col-sm-4 p-0">
                            <div class="contact-box">
                               <div class="contact-icon contact-phone-icon"></div>
-                              <span><b>Tel</b></span>
-                              <p>0123 456 789 / 0123 456 788</p>
+                              <span><b>დაკავშირება</b></span>
+                              <p>+995 123123123</p>
                            </div>
                         </div>
                         <div class="col-sm-4 p-0">
                            <div class="contact-box">
                               <div class="contact-icon contact-mail-icon"></div>
-                              <span><b>Mail</b></span>
-                              <p>infoservices@Gecko.com </p>
+                              <span><b>ელ ფოსტა</b></span>
+                              <p>info@luxtime.ge </p>
                            </div>
                         </div>
                         <div class="col-sm-4 p-0">
                            <div class="contact-box">
                               <div class="contact-icon contact-open-icon"></div>
-                              <span><b>Open</b></span>
-                              <p>Mon – Sat: 9:00 – 18:00</p>
+                              <span><b>სამუშაო საათები</b></span>
+                              <p>ორშ – შაბ: 9:00 – 18:00</p>
                            </div>
                         </div>
                      </div>

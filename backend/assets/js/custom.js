@@ -372,9 +372,9 @@ $(function() {
 
       min: 0,
 
-      max: 100000,
+      max: 1000000,
 
-      values: [ 0, 100000 ],
+      values: [ 0, 1000000 ],
 
       slide: function( event, ui ) {
 
