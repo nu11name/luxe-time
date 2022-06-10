@@ -1,4 +1,4 @@
-{% extends 'main/ru/components/base.html'%}
+{% extends 'main/ge/components/base.html'%}
 {% load static %}
 {% load humanize %}
 {% block body %}
@@ -21,7 +21,7 @@
                                         {% for manufacturer in manufacturers %}
                                             <li>
                                                 <a class="{% if manufacturer.slug in request.path %} active {% endif %}"
-                                                   href="{% url 'catalog-filter-brand_ru' manufacturer.slug %}">{{ manufacturer.title }}</a>
+                                                   href="{% url 'catalog-filter-brand_ge' manufacturer.slug %}">{{ manufacturer.title }}</a>
                                             </li>
                                         {% endfor %}
 
@@ -38,27 +38,27 @@
                                         <div class="inner-title">Category</div>
                                         <ul>
                                             {% for category in categories %}
-                                                <li><a class="{% if category.id|slugify == request.path|slice:'-1:' %} active {% endif %}" href="{% url 'catalog-category_ru' category.id %}">{{ category.title }}</a></li>
+                                                <li><a class="{% if category.id|slugify == request.path|slice:'-1:' %} active {% endif %}" href="{% url 'catalog-category_ge' category.id %}">{{ category.title }}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </div>
                                     <div class="mb-20">
                                         <div class="inner-title">Discount</div>
                                         <ul>
-                                            <li><a class="{% if 'discount' in request.path %} active {% endif %}" href="{% url 'catalog-discount_ru' %}">Yes</a></li>
+                                            <li><a class="{% if 'discount' in request.path %} active {% endif %}" href="{% url 'catalog-discount_ge' %}">Yes</a></li>
                                         </ul>
                                     </div>
                                     <div class="price-range mb-30">
                                         <div class="inner-title">Price range</div>
-                                        <form id="priceForm" action="{% url 'catalog-price' %}"><input name="range" class="price-txt" type="text" id="amount"></form>
+                                        <form id="priceForm" action="{% url 'catalog-price_ge' %}"><input name="range" class="price-txt" type="text" id="amount"></form>
                                         <div id="slider-range"></div>
                                         <a onclick="document.getElementById('priceForm').submit()" class="btn btn-color mt-20" style="background-color: #1f2329;border-radius: 5px;">Filter price</a>
                                     </div>
                                     <div class="mb-20">
                                         <div class="inner-title">Condition</div>
                                         <ul>
-                                            <li><a class="{% if "new" in request.path %} active {% endif %}" href="{% url 'catalog_condition_ru' "new" %}">New</a></li>
-                                            <li><a class="{% if "used" in request.path %} active {% endif %}" href="{% url 'catalog_condition_ru' "used" %}">Used</a></li>
+                                            <li><a class="{% if "new" in request.path %} active {% endif %}" href="{% url 'catalog_condition_ge' "new" %}">New</a></li>
+                                            <li><a class="{% if "used" in request.path %} active {% endif %}" href="{% url 'catalog_condition_ge' "used" %}">Used</a></li>
                                         </ul>
                                     </div>
                                     <div class="mb-20">
@@ -66,7 +66,7 @@
                                         <ul>
                                             {% for type in types %}
                                             <li>
-                                                <a class="{% if type.slug in request.path %} active {% endif %}" href="{% url 'catalog-type_ru' type.slug %}">{{ type.title }}</a>
+                                                <a class="{% if type.slug in request.path %} active {% endif %}" href="{% url 'catalog-type_ge' type.slug %}">{{ type.title }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -76,7 +76,7 @@
                                         <ul>
                                             {% for special_offer in special_offers %}
                                             <li>
-                                                <a class="{% if special_offer.slug in request.path %} active {% endif %}" href="{% url 'special-offers_ru' special_offer.slug %}">{{ special_offer.title}}</a>
+                                                <a class="{% if special_offer.slug in request.path %} active {% endif %}" href="{% url 'special-offers_ge' special_offer.slug %}">{{ special_offer.title}}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -126,14 +126,14 @@
                                                 <div class="sale-label"><span>Sale</span></div>
                                             {% endif %}
                                             <div class="product-image">
-                                                <a href="{% url 'product-details_ru' product.slug %}"> <img
+                                                <a href="{% url 'product-details_ge' product.slug %}"> <img
                                                         src="{{ product.image.url }}" alt="{{ product.title }}"> </a>
                                             </div>
                                             <div style="padding-top: 14px;height: 180px;" class="product-item-details">
                                                 <div class="product-item-name"><a
-                                                        href="{% url 'product-details_ru' product.slug %}">{{ product.brand }}</a></div>
+                                                        href="">{{ product.brand }}</a></div>
                                                 <div class="product-item-name"><a
-                                                        href="{% url 'product-details_ru' product.slug %}">{{ product.title }}</a>
+                                                        href="{% url 'product-details_ge' product.slug %}">{{ product.title }}</a>
                                                 </div>
                                                 <div style="position: absolute;bottom: 10px;left: 0; right:0; margin-left:auto; margin-right:auto;" class="price-box"><span class="price">${{ product.price|intcomma|slice:":-3" }}</span>
                                                     <del class="price old-price">{{ product.old_price|default_if_none:""|intcomma|slice:":-3" }}</del>
@@ -148,11 +148,11 @@
                                   <div class="pagination-bar">
                                     <ul>
                                         {% if page.has_previous %}
-                                            <li><a href="{% url 'catalog_ru' %}?page={{ page.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
                                         {% endif %}
 
                                         {% if page.has_previous %}
-                                            <li><a href="{% url 'catalog_ru' %}?page={{ page.previous_page_number }}">{{ page.previous_page_number }}</a></li>
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.previous_page_number }}">{{ page.previous_page_number }}</a></li>
                                         {% endif %}
 
                                         {% if page.number %}
@@ -160,11 +160,11 @@
                                         {% endif %}
 
                                         {% if page.has_next %}
-                                            <li><a href="{% url 'catalog_ru' %}?page={{ page.next_page_number }}">{{ page.next_page_number }}</a></li>
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.next_page_number }}">{{ page.next_page_number }}</a></li>
                                         {% endif %}
 
                                         {% if page.has_next %}
-                                            <li><a href="{% url 'catalog_ru' %}?page={{ page.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                                            <li><a href="{% url 'catalog_ge' %}?page={{ page.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
                                         {% endif %}
                                     </ul>
                                   </div>

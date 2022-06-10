@@ -131,7 +131,7 @@
                                             </div>
                                             <div style="padding-top: 14px;height: 180px;" class="product-item-details">
                                                 <div class="product-item-name"><a
-                                                        href="product-page.html">{{ product.brand }}</a></div>
+                                                        href="{% url 'product-details_ge' product.slug %}">{{ product.brand }}</a></div>
                                                 <div class="product-item-name"><a
                                                         href="{% url 'product-details_ge' product.slug %}">{{ product.title }}</a>
                                                 </div>
